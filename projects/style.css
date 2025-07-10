@@ -21,11 +21,14 @@
 }
 
 /* Navigation Styles */
-.head nav {
+nav {
+    background-color: var(--bg-color);
+    position: sticky;
+    top: 0;
+    z-index: 999;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 0 20px;
 }
 
 /* Navigation Links */
