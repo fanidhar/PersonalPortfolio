@@ -386,6 +386,7 @@ nav {
 @media only screen and (max-width: 1090px) and (min-width: 600px) {
     /* Adjust navigation and layout for medium screens */
     nav {
+        position: sticky;
         padding-right: 20px;
     }
 
@@ -498,7 +499,7 @@ nav {
 
     /* Small Mobile Navigation Menu */
     nav {
-        position: fixed;
+        position: sticky;
         top: 0;
         right: -100%;
         width: 100%;
@@ -724,7 +725,7 @@ nav {
 
     /* Small Mobile Navigation Menu */
     nav {
-        position: fixed;
+        position: sticky;
         top: 0;
         right: -100%;
         width: 100%;
