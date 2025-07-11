@@ -20,35 +20,74 @@
     position: relative;
 }
 
-/* Navigation Styles */
-nav {
-    background-color: var(--bg-color);
+.navigation{
     position: sticky;
     top: 0;
     z-index: 999;
+    background-color: var(--bg-color);
+    
+}
+.navigation nav{
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    background-color: transparent;
+    width: 100%;
 }
-
-/* Navigation Links */
-.nav-link {
-    padding: 20px;
+.navigation nav .nav-link{
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;   
 }
-
-.nav-link a {
-    font-family: var(--secondary-font);
-    font-weight: 700;
-    font-style: normal;
+.navigation nav .nav-link a{
     text-decoration: none;
-    color: inherit;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1rem;
 }
-
-/* Hide Navigation Toggle Checkbox and Label in Desktop */
-.nav-toggle {
+.navigation nav .nav-link a:hover{
+    color: rgb(134, 149, 164);
+    transition: var(--transition);
+}
+.navigation-sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 250px;
+    width: 150px;
+    z-index: 1000;
+    background-color: rgba(250, 250, 250, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--box-shadow);
     display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
-.nav-toggle-label {
+.navigation-sidebar nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: transparent;
+    width: 100%;
+} 
+.navigation-sidebar nav .nav-link{
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;   
+}
+.navigation-sidebar nav .nav-link a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1rem;
+}
+.navigation-sidebar nav .nav-link a:hover{
+    color: rgb(134, 149, 164);
+    transition: var(--transition);
+}
+#menubar{
     display: none;
 }
 /* Main bar */
@@ -104,87 +143,11 @@ nav {
 }
 @media only screen and (max-width: 600px) and (min-width:480px) {
     /* Mobile Navigation Styles */
-    .nav-toggle {
+    #menubar{
+        display: block;
+    }
+    #hideLinks{
         display: none;
-    }
-
-    .nav-toggle-label {
-        display: block;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        width: 30px;
-        height: 21px;
-        cursor: pointer;
-        z-index: 1000;
-    }
-
-    .nav-toggle-label span,
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        display: block;
-        background: var(--text-color);
-        height: 3px;
-        width: 100%;
-        position: absolute;
-        transition: var(--transition);
-    }
-
-    .nav-toggle-label span {
-        top: 9px;
-    }
-
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        content: '';
-    }
-
-    .nav-toggle-label span::before {
-        top: -9px;
-    }
-
-    .nav-toggle-label span::after {
-        bottom: -9px;
-    }
-
-    /* Mobile Navigation Menu */
-    .head nav {
-        position: fixed;
-        top: 0;
-        right: -110%;
-        width: 100%;
-        height: 33vh;
-        background-color: #E5E5E5;
-        flex-direction: column;
-        justify-content: center;
-        transition: var(--transition);
-        z-index: 999;
-    }
-
-    /* Mobile Navigation Toggle States */
-    .nav-toggle:checked ~ nav {
-        right: 0;
-    }
-
-    .nav-toggle:checked ~ .nav-toggle-label span {
-        background: transparent;
-    }
-
-    .nav-toggle:checked ~ .nav-toggle-label span::before {
-        transform: rotate(45deg);
-        top: 0;
-    }
-
-    .nav-toggle:checked ~ .nav-toggle-label span::after {
-        transform: rotate(-45deg);
-        bottom: 0;
-    }
-
-    /* Mobile Navigation Links */
-    .nav-link {
-        padding: 20px;
-        text-align: center;
-        width: 100%;
     }
     .main{
         padding: 30px 10%;
@@ -194,87 +157,11 @@ nav {
 /* Small Mobile Styles (480px and below) */
 @media only screen and (max-width:480px){
     /* Small Mobile Navigation */
-    .nav-toggle {
+    #menubar{
+        display: block;
+    }
+    #hideLinks{
         display: none;
-    }
-
-    .nav-toggle-label {
-        display: block;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        width: 30px;
-        height: 21px;
-        cursor: pointer;
-        z-index: 1000;
-    }
-
-    .nav-toggle-label span,
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        display: block;
-        background: var(--text-color);
-        height: 3px;
-        width: 100%;
-        position: absolute;
-        transition: var(--transition);
-    }
-
-    .nav-toggle-label span {
-        top: 9px;
-    }
-
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        content: '';
-    }
-
-    .nav-toggle-label span::before {
-        top: -9px;
-    }
-
-    .nav-toggle-label span::after {
-        bottom: -9px;
-    }
-
-    /* Small Mobile Navigation Menu */
-    .head nav {
-        position: fixed;
-        top: 0;
-        right: -110%;
-        width: 100%;
-        height: 33vh;
-        background-color: #E5E5E5;
-        flex-direction: column;
-        justify-content: center;
-        transition: var(--transition);
-        z-index: 999;
-    }
-
-    /* Small Mobile Navigation Toggle States */
-    .nav-toggle:checked ~ nav {
-        right: 0;
-    }
-
-    .nav-toggle:checked ~ .nav-toggle-label span {
-        background: transparent;
-    }
-
-    .nav-toggle:checked ~ .nav-toggle-label span::before {
-        transform: rotate(45deg);
-        top: 0;
-    }
-
-    .nav-toggle:checked ~ .nav-toggle-label span::after {
-        transform: rotate(-45deg);
-        bottom: 0;
-    }
-
-    /* Small Mobile Navigation Links */
-    .nav-link {
-        padding: 20px;
-        text-align: center;
-        width: 100%;
     }
     .main{
         padding: 30px 2%;
