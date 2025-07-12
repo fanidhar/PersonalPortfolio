@@ -15,6 +15,17 @@
     font-optical-sizing: auto;
     font-style: normal;
 }
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: white;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(63, 152, 211);
+    border-radius: 5px;
+}
 /* Header Section Styles */
 .head{
     position: relative;
