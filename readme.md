@@ -4,7 +4,7 @@ A modern, responsive personal portfolio website showcasing web development proje
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
